@@ -31,16 +31,16 @@ class HomeController extends Controller
     {
       // FirebaseAuth.getInstance().getCurrentUser();
 
-        $uid = Session::get('uid');
-        $user = app('firebase.auth')->getUser($uid);
-        $response = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('uid'));
+      $name = Session::get('name');
+      dd($name);
+      $user = app('firebase.auth')->getUser($name);
+      $response = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('name'));
 
-
-      if($response->json("role")==='user'){
-        return view('home');
-      }else{
-        return redirect('administrateur');
-      };
+    if($response->json("role")==='user'){
+      return view('home');
+    }else{
+      return redirect('administrateur');
+    };
 
 
 

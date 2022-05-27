@@ -32,15 +32,15 @@ Route::get('home', [HomeController::class,'index']);
 
 Route::get('administrateur', [AdminController::class,'Alluser']);
 
-Route::get('detailvehicule/{uid}/{id}', [VehiculeController::class,'Vehicule']);
+/* Route::get('detailvehicule/{uid}/{id}', [VehiculeController::class,'Vehicule']); */
 Route::get('StatistiqAll', [AllvehiculeController::class,'AllVoiture']);
 
-
+/*
 Route::resource('/home/profile', App\Http\Controllers\Auth\ProfileController::class)->middleware('fireauth');
 
 Route::resource('/password/reset', App\Http\Controllers\Auth\ResetController::class);
 
-Route::resource('/img', App\Http\Controllers\ImageController::class);
+Route::resource('/img', App\Http\Controllers\ImageController::class); */
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('user','fireauth');
 

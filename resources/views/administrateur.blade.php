@@ -147,7 +147,7 @@
 
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                            {{--  <tbody>
 
                                                 @foreach($sinistre as $Sinistres)
 
@@ -159,22 +159,11 @@
                                                         <td>{{$Sinistres['blesse']}}</td>
                                                         <td>{{$Sinistres['Localisation']}}</td>
                                                         <td>{{$Sinistres['degats']}}</td>
-                                                        <td><a href="detailvehicule/">{{$Sinistres['id_vehiculeA']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_vehiculeB']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_AssuranceA']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_AssuranceB']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_assuréA']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_AssuréB']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_CirconstanceA']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_CirconstanceB']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_conducteurA']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_conducteurB']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_observationA']}}</a></td>
-                                                        <td><a href="">{{$Sinistres['id_observationB']}}</a></td>
+
                                                     </tr>
 
                                                 @endforeach
-                                            </tbody>
+                                            </tbody> --}}
                                             </table>
                                         </div>
                                         <!-- END DATA TABLE                  -->

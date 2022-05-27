@@ -1,4 +1,4 @@
-@extends('layouts.HeaderDash')
+{{-- @extends('layouts.HeaderDash')
 
 @section('content')
 
@@ -9,7 +9,7 @@
                                     <div class="col-md-12">
                                         <!-- DATA TABLE-->
                                         <div class="table-responsive m-b-40">
-                                            
+
                                             <table class="table table-borderless table-data3">
                                                 <thead>
                                                     <tr>
@@ -53,3 +53,4 @@
     </div>
 
 @endsection
+ --}}

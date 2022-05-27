@@ -52,16 +52,15 @@ class LoginController extends Controller
        try {
           $signInResult = $this->auth->signInWithEmailAndPassword($request['email'], $request['password']);
           $user = new User($signInResult->data());
-          //uid Session
+          $ok=$signInResult->data(['displayName']);
+         // dd($ok["displayName"]);
           $loginuid = $signInResult->firebaseUserId();
-          Session::put('uid',$loginuid);
+          Session::put('name',$ok["displayName"]);
+          //dd(session()->get('name'));
 
-   /* $name = Http::post('http://localhost:3000/api/user/recUser2/');
-
-          dd($name->json()); */
 
           $result = Auth::login($user);
-         // dd($user);
+
           return redirect($this->redirectPath());
        } catch (FirebaseException $e) {
           throw ValidationException::withMessages([$this->username() => [trans('auth.failed')],]);
@@ -86,14 +85,6 @@ class LoginController extends Controller
           return redirect()->route('login');
        }
     }
-     public function verif()
-    {
 
-        $name = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('uid'));
-          if($response->json("role")=='user'){
-            return redirect('home');
-          }else{
-            return redirect('administrateur');
-          };
-    }
  }
+
