@@ -38,7 +38,7 @@
     <link href="plugins/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="plugins/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
-            
+
     <!-- Main CSS-->
     <link href="plugins/css/theme.css" rel="stylesheet" media="all">
 
@@ -112,7 +112,7 @@
                             <div class="account-item account-item--style2 clearfix js-item-menu">
 
                                 <div class="content">
-                                    <a class="js-acc-btn" href="#">john doe</a>
+                                    <a class="js-acc-btn" href="#">{{Session::get('name')}}</a>
                                 </div>
                                 <div class="account-dropdown js-dropdown">
                                     <div class="info clearfix">
@@ -123,9 +123,9 @@
                                         </div>
                                         <div class="content">
                                             <h5 class="name">
-                                                <a href="#">john doe</a>
+                                                <a href="#"> {{Session::get('name')}} </a>
                                             </h5>
-                                            <span class="email">johndoe@example.com</span>
+                                            <span class="email"></span>
                                         </div>
                                     </div>
                                     <div class="account-dropdown__body">

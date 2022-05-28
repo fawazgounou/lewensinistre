@@ -51,6 +51,7 @@ class LoginController extends Controller
  protected function login(Request $request) {
        try {
           $signInResult = $this->auth->signInWithEmailAndPassword($request['email'], $request['password']);
+         
           $user = new User($signInResult->data());
           $ok=$signInResult->data(['displayName']);
          // dd($ok["displayName"]);

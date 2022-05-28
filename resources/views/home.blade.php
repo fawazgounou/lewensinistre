@@ -127,40 +127,47 @@
                                     <div class="col-md-12">
                                         <!-- DATA TABLE-->
                                         <div class="table-responsive m-b-40">
+                             
+                                        </div>
+                                        <!-- END DATA TABLE                  -->
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!-- DATA TABLE-->
+                                        <h3>Liste des Sinistres</h3>
+                                            <br>
+                                        <div class="table-responsive m-b-40">
                                             <table class="table table-borderless table-data3">
                                                 <thead>
                                                     <tr>
-                                                        <th>date</th>
-                                                        <th>type</th>
-                                                        <th>description</th>
-                                                        <th>status</th>
-
-                                                    </tr>
+                                                        <th>id</th>
+                                                        <th>Localisation</th>
+                                                        <th>Date </th>
+                                                        <th>Heure</th>
+                                                        <th>Lieu</th>
+                                                        <th>blesse</th>
+                                                        <th>degats</th>
+                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>2018-09-29 05:57</td>
-                                                        <td>Mobile</td>
-                                                        <td>iPhone X 64Gb Grey</td>
-                                                        <td class="process">Processed</td>
+                                             <tbody>
 
-                                                    </tr>
-                                                    <tr>
-                                                        <td>2018-09-28 01:22</td>
-                                                        <td>Mobile</td>
-                                                        <td>Samsung S8 Black</td>
-                                                        <td class="process">Processed</td>
+                                                @foreach($usersinistre as $Sinistres)
 
-                                                    </tr>
                                                     <tr>
-                                                        <td>2018-09-27 02:12</td>
-                                                        <td>Game</td>
-                                                        <td>Game Console Controller</td>
-                                                        <td class="denied">Denied</td>
+                                                        {{-- <td>{{$Sinistres['id']}}</td> --}}
+                                                        <td>{{$Sinistres['Localisation']}}</td>
+                                                        <td>{{$Sinistres['date_Sinistre']}}</td>
+                                                        <td>{{$Sinistres['Heure_Sinistre']}}</td>
+                                                        <td>{{$Sinistres['Lieu']}}</td>
+                                                        <td>{{$Sinistres['blesse']}}</td>
+                                                        <td>{{$Sinistres['degats']}}</td>
 
                                                     </tr>
 
-                                                </tbody>
+                                                @endforeach
+                                            </tbody>
                                             </table>
                                         </div>
                                         <!-- END DATA TABLE                  -->

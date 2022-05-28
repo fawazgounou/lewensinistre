@@ -126,44 +126,31 @@
                                                 <thead>
                                                     <tr>
                                                         <th>id</th>
+                                                        <th>Localisation</th>
                                                         <th>Date </th>
                                                         <th>Heure</th>
                                                         <th>Lieu</th>
-                                                        <th>Localisation</th>
                                                         <th>blesse</th>
                                                         <th>degats</th>
-                                                      <th>id_vehiculeA</th>
-                                                        <th>id_vehiculeB</th>
-                                                        <th>id_AssuranceA</th>
-                                                        <th>id_AssuranceB</th>
-                                                        <th>id_assuréA</th>
-                                                        <th>id_AssuréB</th>
-                                                        <th>id_CirconstanceA</th>
-                                                        <th>id_CirconstanceB</th>
-                                                        <th>id_conducteurA</th>
-                                                        <th>id_conducteurB</th>
-                                                        <th>id_observationA</th>
-                                                        <th>id_observationB</th>
-
-                                                    </tr>
+                                                     </tr>
                                                 </thead>
-                                            {{--  <tbody>
+                                             <tbody>
 
                                                 @foreach($sinistre as $Sinistres)
 
                                                     <tr>
-                                                        <td>{{$Sinistres['id']}}</td>
+                                                        {{-- <td>{{$Sinistres['id']}}</td> --}}
+                                                        <td>{{$Sinistres['Localisation']}}</td>
                                                         <td>{{$Sinistres['date_Sinistre']}}</td>
                                                         <td>{{$Sinistres['Heure_Sinistre']}}</td>
                                                         <td>{{$Sinistres['Lieu']}}</td>
                                                         <td>{{$Sinistres['blesse']}}</td>
-                                                        <td>{{$Sinistres['Localisation']}}</td>
                                                         <td>{{$Sinistres['degats']}}</td>
 
                                                     </tr>
 
                                                 @endforeach
-                                            </tbody> --}}
+                                            </tbody>
                                             </table>
                                         </div>
                                         <!-- END DATA TABLE                  -->

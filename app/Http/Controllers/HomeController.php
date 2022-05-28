@@ -32,12 +32,15 @@ class HomeController extends Controller
       // FirebaseAuth.getInstance().getCurrentUser();
 
       $name = Session::get('name');
-      dd($name);
-      $user = app('firebase.auth')->getUser($name);
       $response = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('name'));
+      $responseS = Http::get('http://localhost:3000/api/user/getsinistre/'.session()->get('name'));
+
+
+
+
 
     if($response->json("role")==='user'){
-      return view('home');
+      return view('home',['usersinistre'=>$responseS->json()]);
     }else{
       return redirect('administrateur');
     };
