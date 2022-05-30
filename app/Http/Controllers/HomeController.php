@@ -35,7 +35,7 @@ class HomeController extends Controller
       $response = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('name'));
       $responseS = Http::get('http://localhost:3000/api/user/getsinistre/'.session()->get('name'));
 
-
+        //dd($responseS->json());
 
 
 
