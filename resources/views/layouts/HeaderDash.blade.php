@@ -165,7 +165,7 @@
             @yield('content')
         </main>
     </div>
- 
+
 
     <!-- Main JS-->
     <script src="plugins/js/main.js"></script>

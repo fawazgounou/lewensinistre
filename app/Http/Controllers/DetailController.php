@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
-
+use Dompdf\Dompdf;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -13,7 +13,19 @@ class DetailController extends Controller
     $Sinistre1 = Http::get('http://localhost:3000/api/user/get1sinistre/'.session()->get('name').'/'.$id);
            //dd($Sinistre1->json());
 
-     return  view('detailSinistre',['Sinistres'=>$Sinistre1->json()]);
+           $dompdf = new Dompdf();
+           $dompdf->loadHtml(view('detailSinistre',['Sinistres'=>$Sinistre1->json()]));
+
+           // (Optional) Setup the paper size and orientation
+           $dompdf->setPaper('A4', 'landscape');
+
+           // Render the HTML as PDF
+           $dompdf->render();
+
+           // Output the generated PDF to Browser
+           $dompdf->stream('Sinistre');
+
+
 
    }
 }

@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
 
-                                @foreach($usersinistre as $Sinistres)
+                         @foreach($usersinistre as $Sinistres)
                                 <div class="btn-group mb-4">
                                     <a href="detailSinistre/{{$Sinistres['id']}}" class="btn btn-success">Save as PDF</a>
                                   </div>
@@ -173,7 +173,7 @@
                                        <h6>Nom:</h6>{{$Sinistres['NomAS']}}
                                        <h6> Prenoms:</h6>{{$Sinistres['PrenomAS']}}
                                       <h6> Adresse:</h6>{{$Sinistres['AdresseAS']}}
-                                        <h6>Téléphone:</h6>{{$Sinistres['TéléphoneASS']}}
+                                        <h6>Téléphone:</h6>{{$Sinistres['TéléphoneAS']}}
                                        <h6> Code_Postal:</h6>{{$Sinistres['Code_PostalAS']}}
                                        <h6>Email:</h6>{{$Sinistres['EmailAS']}}
                                        <h5>Vehicule</h5>
@@ -276,7 +276,7 @@
                                     </div>
                                 </div>
                                 </div>
-                                @endforeach
+                         @endforeach
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="copyright">

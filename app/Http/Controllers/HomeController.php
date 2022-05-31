@@ -37,8 +37,6 @@ class HomeController extends Controller
 
         //dd($responseS->json());
 
-
-
     if($response->json("role")==='user'){
       return view('home',['usersinistre'=>$responseS->json()]);
     }else{
