@@ -123,9 +123,11 @@
                                         <!-- END CHART PERCENT-->
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+
                                 @foreach($usersinistre as $Sinistres)
+                                <div class="btn-group mb-4">
+                                    <a href="detailSinistre/{{$Sinistres['id']}}" class="btn btn-success">Save as PDF</a>
+                                  </div>
                                 <div class="row" style="align-content: center">
                                     <div class="row">
 
@@ -168,8 +170,8 @@
                                         <!-- DATA TABLE-->
                                         <h3>Vehicule A</h3>
                                         <h5>Preneur d'assurance/Assuré</h5>
-                                       <h6>Nom:</h6>{{$Sinistres['nomAS']}}
-                                       <h6> Prenoms:</h6>{{$Sinistres['prenomAS']}}
+                                       <h6>Nom:</h6>{{$Sinistres['NomAS']}}
+                                       <h6> Prenoms:</h6>{{$Sinistres['PrenomAS']}}
                                       <h6> Adresse:</h6>{{$Sinistres['AdresseAS']}}
                                         <h6>Téléphone:</h6>{{$Sinistres['TéléphoneASS']}}
                                        <h6> Code_Postal:</h6>{{$Sinistres['Code_PostalAS']}}
@@ -223,8 +225,8 @@
                                         <h3>Vehicule B</h3>
                                             <br>
                                             <h5>Preneur d'assurance/Assuré</h5>
-                                            <h6>Nom:</h6>{{$Sinistres['nomASB']}}
-                                            <h6> Prenoms:</h6>{{$Sinistres['prenomASB']}}
+                                            <h6>Nom:</h6>{{$Sinistres['NomASB']}}
+                                            <h6> Prenoms:</h6>{{$Sinistres['PrenomASB']}}
                                            <h6> Adresse:</h6>{{$Sinistres['AdresseASB']}}
                                              <h6>Téléphone:</h6>{{$Sinistres['TéléphoneASSB']}}
                                             <h6> Code_Postal:</h6>{{$Sinistres['Code_PostalASB']}}
@@ -285,7 +287,7 @@
                             </div>
                             <!-- END PAGE CONTENT-->
                         </div>
-
+                    </div>
                 </div>
             </section>
         </div>

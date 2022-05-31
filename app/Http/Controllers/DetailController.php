@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 class DetailController extends Controller
 {
     //
-    public function Details(){
-    $vehiculA = Http::get('http://localhost:3000/api/user/getVehicule/'.session()->get('name'));
-            dd($vehiculA->json());
+    public function Details($id){
 
-     return  view('detailSinistre',['voiture'=>$vehiculA->json()]);
+    $Sinistre1 = Http::get('http://localhost:3000/api/user/get1sinistre/'.session()->get('name').'/'.$id);
+           //dd($Sinistre1->json());
+
+     return  view('detailSinistre',['Sinistres'=>$Sinistre1->json()]);
 
    }
 }

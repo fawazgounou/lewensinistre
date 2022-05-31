@@ -33,10 +33,10 @@ Route::get('home', [HomeController::class,'index']);
 
 Route::get('administrateur', [AdminController::class,'Alluser']);
 
-/* Route::get('detailvehicule/{uid}/{id}', [VehiculeController::class,'Vehicule']); */
+ /* Route::get('detailvehicule/{id}', [VehiculeController::class,'Vehicule']); */
 Route::get('StatistiqAll', [AllvehiculeController::class,'AllVoiture']);
 
-Route::get('detailSinistre', [DetailController::class,'Details']);
+Route::get('detailSinistre/{id}', [DetailController::class,'Details']);
 /*
 Route::resource('/home/profile', App\Http\Controllers\Auth\ProfileController::class)->middleware('fireauth');
 

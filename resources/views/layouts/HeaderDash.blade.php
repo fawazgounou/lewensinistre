@@ -165,25 +165,7 @@
             @yield('content')
         </main>
     </div>
-    <script src="plugins/vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="plugins/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="plugins/vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- plugins/Vendor JS       -->
-    <script src="plugins/vendor/slick/slick.min.js">
-    </script>
-    <script src="plugins/vendor/wow/wow.min.js"></script>
-    <script src="plugins/vendor/animsition/animsition.min.js"></script>
-    <script src="plugins/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
-    </script>
-    <script src="plugins/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="plugins/vendor/counter-up/jquery.counterup.min.js">
-    </script>
-    <script src="plugins/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="plugins/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="plugins/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="plugins/vendor/select2/select2.min.js">
-    </script>
+ 
 
     <!-- Main JS-->
     <script src="plugins/js/main.js"></script>
