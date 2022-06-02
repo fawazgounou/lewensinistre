@@ -56,12 +56,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+              <h3><strong>DIBA SINISTRE</strong> </h3>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -75,23 +70,23 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link"style="color:rgb(111, 126, 225);" href="{{ route('login') }}"><strong>{{ __('Login') }}</strong></a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link"style="color:rgb(111, 126, 225);" href="{{ route('register') }}"><strong>{{ __('Register') }}</strong></a>
                                 </li>
                             @endif
                         @else
 
                           <li class="nav-item">
-                              <a class="nav-link text-dark" href="home/profile">{{ __('Profile') }}</a>
+                              <a class="nav-link text-dark" style="color:rgb(111, 126, 225);"href="home/profile">{{ __('Profile') }}</a>
                           </li>
 
                           <li class="nav-item">
-                            <a class="nav-link text-dark" href="{{ route('logout') }}"
+                            <a class="nav-link text-dark" style="color:rgb(111, 126, 225);"href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -109,13 +104,18 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            @if (session()->has('message'))
+            <div class="alert alert-danger" style ="text-align: center"  role="alert">
+                <strong>{{ session()->get('message')}}</strong>
+              </div>
+            @endif
+                        @yield('content')
         </main>
     </div>
 
     <footer id="sticky-footer" class="flex-shrink-0 py-4 text-dark-50">
       <div class="container text-center">
-        <small>Made with ❤️ by <a href="https://www.youtube.com/channel/UCPj8ztcYe1D6SSuXPDpupeA" style="text-decoration: none;">Seven Stac</a></small>
+        <small>Réalisé par MONRA Fawaz❤️ </small>
       </div>
     </footer>
 </body>

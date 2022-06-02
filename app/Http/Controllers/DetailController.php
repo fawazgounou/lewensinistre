@@ -17,7 +17,7 @@ class DetailController extends Controller
            $dompdf->loadHtml(view('detailSinistre',['Sinistres'=>$Sinistre1->json()]));
 
            // (Optional) Setup the paper size and orientation
-           $dompdf->setPaper('A4', 'landscape');
+           $dompdf->setPaper('a3', 'portrait');
 
            // Render the HTML as PDF
            $dompdf->render();

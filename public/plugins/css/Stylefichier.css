@@ -1,0 +1,51 @@
+.save
+{   margin-left: auto;
+    margin-right:auto;
+    margin-bottom: 0.5%;
+}
+
+.dateR{ margin-left: 8%;}
+.dateC{
+    background-color: rgb(236, 254, 255);
+    margin-bottom: 3%;
+}
+.Ro1{
+    background-color: rgb(141, 234, 141);
+}
+.col1{
+    background-color: rgb(150, 207, 242);
+    padding: auto;
+    text-align: justify;
+}
+.col2{
+    background-color: rgb(228, 232, 170);
+    padding: auto;
+    text-align: justify;
+
+  }
+
+.veh{
+      background-color: rgb(244, 147, 147);
+      color: white;
+      text-align: center;
+  }
+  h5{
+    background-color:rgb(236, 254, 255);
+    color: black;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.champ{
+    margin-top: 2%;
+    margin-bottom: 2%;
+    color: black;
+    padding-right: 2%;
+}
+.tem{
+    background-color: rgb(244, 147, 147);
+      color: white;
+      text-align: center;
+      margin-left: 45%;
+
+}

@@ -64,7 +64,7 @@ class RegisterController extends Controller
             'uid' => $createdUser->uid,
             'name' => $request->name,
             'mail' => $request->email,
-            'role' => 'user',
+            'role' => 'New',
         ]);
         $resonpse = Http::post('http://localhost:3000/api/user/addcompagnie', [
             'name' => $request->name,

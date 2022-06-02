@@ -2,10 +2,58 @@
 
 @section('content')
 
+               <div class="container">
 
 
-                <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE-->
+                        <h3 style="color:rgb(111, 126, 225); ">Liste des Utilisateurs</h3>
+                            <br>
+                        <div class="table-responsive m-b-40">
+                            <table class="table table-borderless table-data3" style=" background-color:rgb(220, 244, 243);">
+                                <thead  style=" background-color:rgb(111, 126, 225);">
+                                    <tr style="font-weight: bold; color:black; ">
+                                        <th>Nom Compagnie</th>
+                                        <th>E-mail Compagnie</th>
+                                        <th>Type</th>
+                                        <th>Attribuer un Role</th>
 
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                @foreach($user as $compagnie)
+
+                                    <tr>
+
+                                        <td>{{$compagnie['name']}}</td>
+                                        <td>{{$compagnie['mail']}}</td>
+                                        <td>{{$compagnie['role']}}</td>
+                                        <td>
+
+                                            <div class="dropdown">
+                                                <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Modifier <span class="caret"></span>
+                                                </button>
+                                                     <div class="dropdown-menu" >
+                                                        <a href="/update/{{$compagnie['id']}}/user">User</a>
+                                                        <a href="/update/{{$compagnie['id']}}/new">New</a>
+                                                        <a href="/update/{{$compagnie['id']}}/admin">Admin</a>
+
+                                                </div>
+                                            </div>
+
+
+                                           </td>
+                                    </tr>
+
+                                @endforeach
+                            </tbody>
+                            </table>
+                        </div>
+                        <!-- END DATA TABLE                  -->
+                    </div>
+                </div>
                                 <div class="row">
 
                                     <div class="col-lg-8">
@@ -66,11 +114,7 @@
                                                         </a>
 
                                                     </li>
-                                                    <li>
-                                                        <span class="dot dot--red"></span>   <a href="inbox.html">
-                                                            <i class="fas fa-chart-bar"></i> <span >Boite de reception</span></a>
 
-                                                    </li>
 
                                                 </ul>
                                             </div>
@@ -83,85 +127,15 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <!-- DATA TABLE-->
-                                        <h3>Liste des Utilisateurs</h3>
-                                            <br>
-                                        <div class="table-responsive m-b-40">
-                                            <table class="table table-borderless table-data3">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nom Compagnie</th>
-                                                        <th>EMail Compagnie</th>
-                                                        <th>Role</th>
 
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
 
-                                                @foreach($user as $compagnie)
 
-                                                    <tr>
-                                                        <td>{{$compagnie['name']}}</td>
-                                                        <td>{{$compagnie['mail']}}</td>
-                                                        <td>{{$compagnie['role']}}</td>
-                                                    </tr>
-
-                                                @endforeach
-                                            </tbody>
-                                            </table>
-                                        </div>
-                                        <!-- END DATA TABLE                  -->
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <!-- DATA TABLE-->
-                                        <h3>Liste des Sinistres</h3>
-                                            <br>
-                                        <div class="table-responsive m-b-40">
-                                            <table class="table table-borderless table-data3">
-                                                <thead>
-                                                    <tr>
-                                                        <th>id</th>
-                                                        <th>Localisation</th>
-                                                        <th>Date </th>
-                                                        <th>Heure</th>
-                                                        <th>Lieu</th>
-                                                        <th>blesse</th>
-                                                        <th>degats</th>
-                                                     </tr>
-                                                </thead>
-                                             <tbody>
-
-                                                @foreach($sinistre as $Sinistres)
-
-                                                    <tr>
-                                                        {{-- <td>{{$Sinistres['id']}}</td> --}}
-                                                        <td>{{$Sinistres['Localisation']}}</td>
-                                                        <td>{{$Sinistres['date_Sinistre']}}</td>
-                                                        <td>{{$Sinistres['Heure_Sinistre']}}</td>
-                                                        <td>{{$Sinistres['Lieu']}}</td>
-                                                        <td>{{$Sinistres['blesse']}}</td>
-                                                        <td>{{$Sinistres['degats']}}</td>
-
-                                                    </tr>
-
-                                                @endforeach
-                                            </tbody>
-                                            </table>
-                                        </div>
-                                        <!-- END DATA TABLE                  -->
-                                    </div>
-                                </div>
 
 
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="copyright">
-                                            <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                                            <small>Réalisé par MONRA Fawaz❤️ </small>
                                         </div>
                                     </div>
 

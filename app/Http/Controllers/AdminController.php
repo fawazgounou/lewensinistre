@@ -4,13 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use PhpParser\Node\Stmt\Function_;
 
 class AdminController extends Controller
 {
     public function Alluser(){
-        $responseuser = Http::get('http://localhost:3000/api/user/getusers');
-          $responsesinistre = Http::get('http://localhost:3000/api/admin/voirsinistre/');
-          dd($responsesinistre->json());
-        return  view('administrateur',['user'=>$responseuser->json(),'sinistre'=>$responsesinistre->json()]);
+        $response = Http::get('http://localhost:3000/api/user/getusers');
+
+
+          //dd($response->json());
+        return  view('administrateur',['user'=>$response->json()]);
        }
+public Function update($id,$role){
+
+    $resonpses = Http::put('http://localhost:3000/api/user/updateR/'.$id, [
+        'role' => $role,
+
+    ]);
+    return redirect('administrateur')->with('message',"Role de l'identifiant modifier avec succès." );
+}
+
 }

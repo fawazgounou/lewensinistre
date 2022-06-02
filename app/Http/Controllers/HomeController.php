@@ -39,9 +39,14 @@ class HomeController extends Controller
 
     if($response->json("role")==='user'){
       return view('home',['usersinistre'=>$responseS->json()]);
-    }else{
-      return redirect('administrateur');
-    };
+    }
+    else if($response->json("role")==='admin'){
+        return redirect('administrateur');
+      }
+      else{
+          session()->flush();
+          return redirect()->route('login')->with('message',"Patientez le temps que votre compte soit validé");
+      };
 
 
 

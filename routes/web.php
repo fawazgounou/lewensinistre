@@ -32,6 +32,7 @@ Route::get('home', [HomeController::class,'index']);
 
 
 Route::get('administrateur', [AdminController::class,'Alluser']);
+Route::get('update/{id}/{role}', [AdminController::class,'update']);
 
  /* Route::get('detailvehicule/{id}', [VehiculeController::class,'Vehicule']); */
 Route::get('StatistiqAll', [AllvehiculeController::class,'AllVoiture']);

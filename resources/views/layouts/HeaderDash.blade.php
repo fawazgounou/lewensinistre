@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -38,6 +39,7 @@
     <link href="plugins/vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="plugins/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
+    <link rel="stylesheet" href="plugins/css/Stylefichier.css">
 
     <!-- Main CSS-->
     <link href="plugins/css/theme.css" rel="stylesheet" media="all">
@@ -49,106 +51,24 @@
             <div class="container">
                 <div class="header4-wrap">
                     <div class="header__logo">
-                        <H3>DIBA SINISTRE</H3>
+                        <H3><strong>DIBA SINISTRE</strong> </H3>
                     </div>
+
                     <div class="header__tool">
-                        <div class="header-button-item has-noti js-item-menu">
-                            <i class="zmdi zmdi-notifications"></i>
-                            <div class="notifi-dropdown js-dropdown">
-                                <div class="notifi__title">
-                                    <p>Vous avez de nouveaux Sinistres</p>
-                                </div>
-                                <div class="notifi__item">
-                                    <div class="bg-c1 img-cir img-40">
-                                        <i class="zmdi zmdi-email-open"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>You got a new file</p>
-                                        <span class="date">April 12, 2018 06:50</span>
-                                    </div>
-                                </div>
-                                                                <div class="notifi__item">
-                                    <div class="bg-c3 img-cir img-40">
-                                        <i class="zmdi zmdi-file-text"></i>
-                                    </div>
-                                    <div class="content">
-                                        <p>You got a new file</p>
-                                        <span class="date">April 12, 2018 06:50</span>
-                                    </div>
-                                </div>
-                                <div class="notifi__footer">
-                                    <a href="#">Toute les notifications</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header-button-item js-item-menu">
-                            <i class="zmdi zmdi-settings"></i>
-                            <div class="setting-dropdown js-dropdown">
-                                <div class="account-dropdown__body">
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-account"></i>Account</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-settings"></i>Setting</a>
-                                    </div>
-
-                                </div>
-                                <div class="account-dropdown__body">
-
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-email"></i>Email</a>
-                                    </div>
-                                    <div class="account-dropdown__item">
-                                        <a href="#">
-                                            <i class="zmdi zmdi-notifications"></i>Notifications</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="account-wrap">
+                          <div class="account-wrap">
                             <div class="account-item account-item--style2 clearfix js-item-menu">
 
-                                <div class="content">
-                                    <a class="js-acc-btn" href="#">{{Session::get('name')}}</a>
-                                </div>
-                                <div class="account-dropdown js-dropdown">
-                                    <div class="info clearfix">
-                                        <div class="image">
-                                            <a href="#">
-                                                <img src="images/icon/avatar-01.jpg" alt="John Doe" />
-                                            </a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="name">
-                                                <a href="#"> {{Session::get('name')}} </a>
-                                            </h5>
-                                            <span class="email"></span>
-                                        </div>
+                                    <div class="content">
+                                        <a class="js-acc-btn" style="color:rgb(111, 126, 225); font-size:25px; " href="#"><strong>{{Session::get('name')}}</strong> </a>
                                     </div>
-                                    <div class="account-dropdown__body">
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-account"></i>Account</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-settings"></i>Setting</a>
-                                        </div>
-                                        <div class="account-dropdown__item">
-                                            <a href="#">
-                                                <i class="zmdi zmdi-money-box"></i>Billing</a>
-                                        </div>
-                                    </div>
-                                    <div class="account-dropdown__footer">
+                                    <div class="account-dropdown js-dropdown">
+                                            <div class="account-dropdown__footer" style="color:rgb(111, 126, 225); background-color:rgb(111, 126, 225);" >
 
-                                            <a class="nav-link text-dark" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();"><i class="zmdi zmdi-power"></i>
-                                {{ __('Logout') }}
-                            </a>
+                                                <a class="nav-link text-dark" style="color:rgb(246, 251, 249);" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();"><i class="zmdi zmdi-power"></i>
+                                <strong>    {{ __('Déconnexion') }}</strong>
+                                </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
@@ -161,13 +81,40 @@
             </div>
         </header>
 
+
         <main class="py-4">
+            @if (session()->has('message'))
+            <div class="alert alert-success" style ="text-align: center" role="alert">
+            <strong>{{ session()->get('message')}}</strong>
+              </div>
+            @endif
             @yield('content')
         </main>
     </div>
 
 
     <!-- Main JS-->
+
+    <script src="plugins/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="plugins/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="plugins/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- plugins/Vendor JS       -->
+    <script src="plugins/vendor/slick/slick.min.js">
+    </script>
+    <script src="plugins/vendor/wow/wow.min.js"></script>
+    <script src="plugins/vendor/animsition/animsition.min.js"></script>
+    <script src="plugins/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="plugins/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="plugins/vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="plugins/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="plugins/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="plugins/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="plugins/vendor/select2/select2.min.js">
+    </script>
+
     <script src="plugins/js/main.js"></script>
 </body>
 </html>
