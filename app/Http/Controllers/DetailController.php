@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Dompdf\Dompdf;
+use Dompdf\Options;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -12,8 +13,9 @@ class DetailController extends Controller
 
     $Sinistre1 = Http::get('http://localhost:3000/api/user/get1sinistre/'.session()->get('name').'/'.$id);
            //dd($Sinistre1->json());
-
-           $dompdf = new Dompdf();
+           $options = new Options();
+           $options->set('isRemoteEnabled', true);
+           $dompdf = new Dompdf($options);
            $dompdf->loadHtml(view('detailSinistre',['Sinistres'=>$Sinistre1->json()]));
 
            // (Optional) Setup the paper size and orientation

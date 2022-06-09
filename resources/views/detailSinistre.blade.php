@@ -102,13 +102,13 @@ aside{
             <div class="col-md-9 dateC">
             <div class="row Ro1">
 				<ul>
-                    <li>  <strong> Date de l'accident:</strong>{{$Sinistres['date_Sinistre']}}</li>
-                    <li>  <strong>Heure:</strong>{{$Sinistres['Heure_Sinistre']}}</li>
-                    <li>  <strong>Localisation:</strong>{{$Sinistres['Localisation']}}</li>
+                    <li><strong> Date de laccident:</strong>{{$Sinistres['date_Sinistre']}}</li>
+                    <li><strong>Heure:</strong>{{$Sinistres['Heure_Sinistre']}}</li>
+                    <li><strong>Localisation:</strong>{{$Sinistres['Localisation']}}</li>
 
                 </ul>
                     <ul>
-                    <li>     <strong>Blesser:</strong>
+                    <li><strong>Blesser:</strong>
                     {{$Sinistres['blesse']}}</li>
                     <li> <strong>Dégats:</strong>
                     {{$Sinistres['degats']}}</li>
@@ -120,13 +120,13 @@ aside{
                 <aside>
                     <ul>
                     <li class="SA">     <strong>SignatureA:</strong>
-                       {{--  <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
+                        <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
                         src="{{$Sinistres['SignatureA']}}"
-                        alt=""> --}}
-                    <li  class="SA"><strong>SignatureB:</strong>
-                        {{-- <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
+                        alt="">
+                 <li  class="SA"><strong>SignatureB:</strong>
+                       <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
                         src="{{$Sinistres['SignatureB']}}"
-                        alt=""></li> --}}
+                        alt=""></li>
 
 
                 </ul>
@@ -301,9 +301,9 @@ aside{
 </div>
 <div class="image">
 
-    {{-- <img style=" width: 25%;transform:rotate(90deg); margin-left:40%; margin-top:-5%;margin-bottom:-5% "
+    <img style=" width: 25%;transform:rotate(90deg); margin-left:40%; margin-top:-5%;margin-bottom:-5% "
     src="{{$Sinistres['CroquisA']}}"
-    alt=""> --}}
+    alt="">
 </div>
 
 

@@ -114,9 +114,10 @@
     </div>
 
     @if(empty($usersinistre))
-    {
+
 <h4 style="text-align: center; color:rgb(111, 126, 225)"> Vous n'avez aucune soumission de sinistre</h4>
-    }@else{
+    @else
+
                          @foreach($usersinistre as $Sinistres)
                                 <div class="save" >
                                     <a href="detailSinistre/{{$Sinistres['id']}}"class="btn btn-primary" >Télécharger le PDF</a>
@@ -334,7 +335,7 @@
                                     </div>
                                 </div>
                          @endforeach
-                        }
+                        
                         @endif
                                 <div class="row">
                                     <div class="col-md-12">
