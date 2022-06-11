@@ -67,7 +67,7 @@ class RegisterController extends Controller
             'role' => 'New',
         ]);
         $resonpse = Http::post('http://localhost:3000/api/user/addcompagnie', [
-            'name' => $request->name,
+            'name' => $request->name,               
         ]);
 
          return redirect()->route('login');

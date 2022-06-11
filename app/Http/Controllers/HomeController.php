@@ -32,8 +32,9 @@ class HomeController extends Controller
       // FirebaseAuth.getInstance().getCurrentUser();
 
       $name = Session::get('name');
-      $response = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('name'));
-      $responseS = Http::get('http://localhost:3000/api/user/getsinistre/'.session()->get('name'));
+      $response = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('names'));
+      $responseS = Http::get('http://localhost:3000/api/user/getsinistre/'.session()->get('names'));
+
 
         //dd($responseS->json());
 
@@ -50,12 +51,12 @@ class HomeController extends Controller
 
 
 
+}
+public function voirDash(Request $request)
+{
+    //dd($request->name);
+  Session::put('names',$request->name);
+  return  redirect()->route('home');
+}
 
-
-
-    /* public function customer()
-    {
-      $userid = Session::get('uid');
-      return view('customers',compact('userid'));
-    } */
-}}
+}

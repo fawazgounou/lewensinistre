@@ -3,7 +3,6 @@
 <head>
 
     <style>
-
 .SA{margin-bottom:6%;
 	}
 aside{
@@ -13,20 +12,16 @@ aside{
 	margin-bottom:3px;
 	margin-left:80px;
 }
-
 		ul{
 	display:inline-block;
     margin-top: 3%;
     margin-bottom: 0%
-
 }
 /* .page-break {
     page-break-after: always;
 } */
-
 .dateC{
     background-color: rgb(236, 254, 255);
-
 }
 .Ro1{
     background-color: rgb(141, 234, 141);
@@ -36,7 +31,6 @@ aside{
     padding: auto;
     text-align: justify;
 	margin-right:60%;
-
 }
 .col2{
     background-color: rgb(228, 232, 170);
@@ -44,9 +38,7 @@ aside{
     text-align: justify;
 	margin-left:60%;
 	margin-top:-101%;
-
   }
-
 .veh{
       background-color: rgb(244, 147, 147);
       color: white;
@@ -71,7 +63,6 @@ aside{
       margin-right:5%;
       margin-bottom: 0%;
       margin-left: 3%;
-
 }
 .col12{
  display: inline;
@@ -87,11 +78,7 @@ aside{
    	margin-left:50%;
 	margin-top:-28%;
 	padding: auto;
-
-
 	}
-
-
    </style>
 
 </head>
@@ -121,11 +108,11 @@ aside{
                     <ul>
                     <li class="SA">     <strong>SignatureA:</strong>
                         <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
-                        src="{{$Sinistres['SignatureA']}}"
+                        src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
                         alt="">
                  <li  class="SA"><strong>SignatureB:</strong>
                        <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
-                        src="{{$Sinistres['SignatureB']}}"
+                        src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
                         alt=""></li>
 
 
@@ -300,12 +287,12 @@ aside{
           </div>
 </div>
 <div class="image">
-
     <img style=" width: 25%;transform:rotate(90deg); margin-left:40%; margin-top:-5%;margin-bottom:-5% "
-    src="{{$Sinistres['CroquisA']}}"
+    src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
     alt="">
 </div>
 
 
 </body>
 </html>
+

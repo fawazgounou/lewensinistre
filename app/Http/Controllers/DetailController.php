@@ -13,10 +13,10 @@ class DetailController extends Controller
 
     $Sinistre1 = Http::get('http://localhost:3000/api/user/get1sinistre/'.session()->get('name').'/'.$id);
            //dd($Sinistre1->json());
-           $options = new Options();
-           $options->set('isRemoteEnabled', true);
-           $dompdf = new Dompdf($options);
+          
+           $dompdf = new Dompdf();
            $dompdf->loadHtml(view('detailSinistre',['Sinistres'=>$Sinistre1->json()]));
+
 
            // (Optional) Setup the paper size and orientation
            $dompdf->setPaper('a3', 'portrait');

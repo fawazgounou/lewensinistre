@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\dashbordController;
 use App\Http\Controllers\AllvehiculeController;
 use App\Http\Controllers\DetailController;
 use Illuminate\Support\Facades\Route;
@@ -28,34 +29,15 @@ Auth::routes();
 
 Route::post('login/{provider}/callback', 'Auth\LoginController@handleCallback');
 
-Route::get('home', [HomeController::class,'index']);
+Route::get('home', [HomeController::class,'index'])->name('home');
 
 
+Route::get('voirdash/{name}', [HomeController::class,'voirDash']);
 Route::get('administrateur', [AdminController::class,'Alluser']);
 Route::get('update/{id}/{role}', [AdminController::class,'update']);
 
- /* Route::get('detailvehicule/{id}', [VehiculeController::class,'Vehicule']); */
-Route::get('StatistiqAll', [AllvehiculeController::class,'AllVoiture']);
+Route::get('dashbord/{id}', [dashbordController::class,'Detail']);
 
-Route::get('detailSinistre/{id}', [DetailController::class,'Details']);
-/*
-Route::resource('/home/profile', App\Http\Controllers\Auth\ProfileController::class)->middleware('fireauth');
+Route::get('detailSinistre/{id}', [DetailController::class,'Details'])->name('detailSinistre');
 
-Route::resource('/password/reset', App\Http\Controllers\Auth\ResetController::class);
-
-Route::resource('/img', App\Http\Controllers\ImageController::class); */
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('user','fireauth');
-
-// Route::get('/home/customer', [App\Http\Controllers\HomeController::class, 'customer'])->middleware('user','fireauth');
-
-//Route::get('/email/verify', [App\Http\Controllers\Auth\ResetController::class, 'verify_email'])->name('verify')->middleware('fireauth');
-
-/* Route::get('/home', function () {
-    return view('home');
-});
- */
-/* Route::get('/administrateur', function () {
-    return view('administrateur');
-}); */
 

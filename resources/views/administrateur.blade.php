@@ -18,6 +18,7 @@
                                         <th>E-mail Compagnie</th>
                                         <th>Type</th>
                                         <th>Attribuer un Role</th>
+                                        <th>Voir le Daschbord</th>
 
                                     </tr>
                                 </thead>
@@ -45,6 +46,19 @@
 
 
                                            </td>
+                                           <td>
+
+
+                                            <button class="btn btn-primary" type="button" >   <a href="voirdash/{{$compagnie['name']}}" style="color: white">Voir Dashbord</a>
+                                            </button>
+
+
+
+
+
+
+
+                                       </td>
                                     </tr>
 
                                 @endforeach
