@@ -3,18 +3,20 @@
 <head>
 
     <style>
-.SA{margin-bottom:6%;
+.SA{margin-bottom:3px;
+    margin-top: 1px
 	}
 aside{
 	display:inline-block;
 	background:#EBFEFC;
     width:30%;
+    margin-top:30px;
 	margin-bottom:3px;
-	margin-left:80px;
+	margin-left:90px;
 }
 		ul{
 	display:inline-block;
-    margin-top: 3%;
+    margin-top: 0px;
     margin-bottom: 0%
 }
 /* .page-break {
@@ -79,6 +81,11 @@ aside{
 	margin-top:-28%;
 	padding: auto;
 	}
+    .sign{
+
+    margin-top: 3px;
+    margin-left: 50px
+    }
    </style>
 
 </head>
@@ -87,8 +94,12 @@ aside{
 
         <div class="row dateR">
             <div class="col-md-9 dateC">
+                <div class=" row col-md-9" >
+                    <h1 style=" margin-left:20%">CONSTAT AMIABLE AUTOMOBILE {{Session::get('name')}}</h1>
+
+                </div>
             <div class="row Ro1">
-				<ul>
+				 <ul>
                     <li><strong> Date de laccident:</strong>{{$Sinistres['date_Sinistre']}}</li>
                     <li><strong>Heure:</strong>{{$Sinistres['Heure_Sinistre']}}</li>
                     <li><strong>Localisation:</strong>{{$Sinistres['Localisation']}}</li>
@@ -105,27 +116,50 @@ aside{
                 </ul>
 
                 <aside>
-                    <ul>
-                    <li class="SA">     <strong>SignatureA:</strong>
-                        <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
+                    <div class="sign">
+                        <p > <strong>Signature A </strong>
+                            &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                            <strong>Signature B</strong> </p>
+                    <p>   @if($Sinistres['SignatureB']==" ")
+                        <h6> Pas de Signature A</h6>
+                        @else
+                      <img
                         src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
-                        alt="">
-                 <li  class="SA"><strong>SignatureB:</strong>
-                       <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
-                        src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
-                        alt=""></li>
+                        alt="" height="30" width="99">
+                        @endif &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+                         @if($Sinistres['SignatureB']==" ")
+                        <h6> Pas de SignatureB</h6>
+                        @else
+                        <img
+                        src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureB'])) }}"
+                        alt="" height="30" width="99">
+                          @endif</p>
 
 
-                </ul>
+                    </div>
+
+
+                  {{--   <ul >
+                    <li class="SA" > <strong>SignatureA:</strong>
+                        @if($Sinistres['SignatureB']==" ")
+                        <h6> Pas de Signature A</h6>
+                        @else
+                      <img
+                        src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
+                        alt="" height="30" width="99">
+                        @endif
+                 <li class="SA"  ><strong>SignatureB:</strong>
+                      @if($Sinistres['SignatureB']==" ")
+                      <h6> Pas de SignatureB</h6>
+                      @else
+                      <img
+                      src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureB'])) }}"
+                      alt="" height="30" width="99">
+                        @endif
+                    </li>
+                </ul> --}}
             </aside>
-
-
-
-
-
             </div>
-
-
       <div class="col12">
 
          <div class="col-md-5 col1">
@@ -171,17 +205,10 @@ aside{
                 <strong class="champ">Mes Observations:</strong>{{$Sinistres['Détaille']}}<br>
                 <h5>Circonstance</h5>
             <strong class="champ">Circonstance:</strong>{{$Sinistres['Circonstance']}}<br>
-           {{--  <h5>Croquis</h5>
-                <strong class="champ">url:</strong>{{$Sinistres['CroquisA']}}<br>
-            <h5>Photos</h5>
-            <strong class="champ">url:</strong>{{$Sinistres['PhotosA']}}<br>
-            <h5>Signature</h5>
-            <strong class="champ">url:</strong>{{$Sinistres['SignatureA']}}<br> --}}
-
-                <!-- END DATA TABLE                  -->
+                     -->
         </div>
                <div class="col-md-5 col2">
-                <!-- DATA TABLE-->
+
                 <h3 class="veh">Véhicule B</h3>
 
                     <h5>Preneur Assurance/Assuré</h5>
@@ -225,15 +252,7 @@ aside{
 
                  <h5>Circonstance</h5>
                 <strong class="champ">Circonstance:</strong>{{$Sinistres['CirconstanceCB']}}<br>
-              {{--    <h5>Croquis</h5>
-                     <strong class="champ">url:</strong>{{$Sinistres['CroquisA_B']}}<br>
-                 <h5>Photos</h5>
-                 <strong class="champ">url:</strong>{{$Sinistres['PhotosB']}}<br>
-                 <h5>Signature</h5>
-                 <strong class="champ">url:</strong>{{$Sinistres['SignatureB']}}<br> --}}
-
-                <!-- END DATA TABLE                  -->
-            </div>
+             </div>
 	</div>
 
 
@@ -287,10 +306,19 @@ aside{
           </div>
 </div>
 <div class="image">
-    <img style=" width: 25%;transform:rotate(90deg); margin-left:40%; margin-top:-5%;margin-bottom:-5% "
-    src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
+    @if($Sinistres['CroquisA']==" ")
+    <h6> Pas de Croquis</h6>
+    @else
+    <img   style=" transform:rotate(90deg); margin-top:-1px;margin-bottom:-5px;	width:390px;
+	height:200%;
+   	margin-left:20px;
+	 "
+    src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['CroquisA'])) }}"
     alt="">
+    @endif
 </div>
+<div > </div>
+
 
 
 </body>

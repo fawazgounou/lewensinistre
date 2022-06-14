@@ -13,7 +13,7 @@ class DetailController extends Controller
 
     $Sinistre1 = Http::get('http://localhost:3000/api/user/get1sinistre/'.session()->get('name').'/'.$id);
            //dd($Sinistre1->json());
-          
+
            $dompdf = new Dompdf();
            $dompdf->loadHtml(view('detailSinistre',['Sinistres'=>$Sinistre1->json()]));
 

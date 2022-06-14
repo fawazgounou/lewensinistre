@@ -3,10 +3,14 @@
 @section('content')
 
 <div class="container">
-    <button class="btn btn-primary " type="button" > <a href="{{route('detailSinistre',['id'=>$id])}}" style="color: white"> Télécharger</a>
+    <button class="btn btn-primary save " type="button" > <a href="{{route('detailSinistre',['id'=>$id])}}" style="color: white"> Télécharger</a>
     </button>
                                 <div class="row dateR">
                                     <div class="col-md-9 dateC">
+                                        <div class=" row col-md-9" >
+                                            <h3 style="">CONSTAT AMIABLE AUTOMOBILE {{Session::get('name')}}</h3>
+
+                                        </div>
                                     <div class="row Ro1">
 
                                         <div class="col-md-4">
@@ -88,14 +92,14 @@
                                         <h5>Circonstance</h5>
                                     <strong class="champ">Circonstance:</strong>{{$Sinistres['Circonstance']}}<br>
 
-                                    {{-- <h5>Photos</h5>
-                                    <a href="{{$Sinistres['PhotosA']}}"></a><strong class="champ">url:</strong>{{$Sinistres['PhotosA']}}<br> --}}
-                                    <h5>SignatureA</h5>
-                                    <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
+                                     <h5>Photos</h5>
+                                     <a href="{{$Sinistres['AvantA']}} "style="font-weight: 500">Avant</a>&ensp;<a href="{{$Sinistres['ArriereA']}} "style="font-weight: 500">Arriere</a>&ensp; <a href="{{$Sinistres['DroitA']}} " style="font-weight: 500">Droite</a>&ensp; <a href="{{$Sinistres['GaucheA']}} "style="font-weight: 500">Gauche</a> &ensp;<a href="{{$Sinistres['HautA']}} "style="font-weight: 500">Haut</a>
+                                    <h5>Signature A</h5>
+                                    <img style=" margin-left:40%; margin-top:7px;  margin-bottom:5px;"
                                     src="{{$Sinistres['SignatureA']}}"
-                                    alt="">
+                                    alt=""  width="79">
 
-                                        <!-- END DATA TABLE                  -->
+
                                 </div>
                                  <div class="col-md-2"> </div>
 
@@ -144,13 +148,12 @@
 
                                          <h5>Circonstance</h5>
                                         <strong class="champ">Circonstance:</strong>{{$Sinistres['CirconstanceCB']}}<br>
-                                      {{--
-                                         <h5>Photos</h5>
-                                         <strong class="champ">url:</strong>{{$Sinistres['PhotosB']}}<br> --}}
-                                         <h5>SignatureA</h5>
-                                    <img style=" width: 50px;transform:rotate(90deg); margin-left:40%; margin-top:2%  margin-bottom:0%"
-                                    src="{{$Sinistres['SignatureB']}}"
-                                    alt="">
+                                        <h5>Photos</h5>
+                                     <a href="{{$Sinistres['AvantB']}} " style="font-weight: 500">Avant</a>&ensp;<a href="{{$Sinistres['ArriereB']}}" style="font-weight: 500">Arriere</a>&ensp; <a href="{{$Sinistres['DroitB']}} " style="font-weight: 500">Droite</a>&ensp; <a href="{{$Sinistres['GaucheB']}} " style="font-weight: 500">Gauche</a> &ensp;<a href="{{$Sinistres['HautB']}} " style="font-weight: 500">Haut</a>
+                                         <h5>Signature B</h5>
+                                         <img style=" margin-left:40%; margin-top:7px;  margin-bottom:5px;"
+                                         src="{{$Sinistres['SignatureB']}}"
+                                         alt=""  width="79">
 
 
                                         <!-- END DATA TABLE                  -->
@@ -167,18 +170,17 @@
     <strong class="champ">Prénom:</strong>{{$Sinistres['prenomT']}}
 </div>
 <div class=" col-md-3">
-    <strong class="champ">Adresse:</strong>{{$Sinistres['TelephoneT']}}
+    <strong class="champ">Adresse:</strong>{{$Sinistres['AdresseT']}}
 </div>
 <div class=" col-md-3">
-    <strong class="champ">Téléphone:</strong>{{$Sinistres['AdresseT']}}
+    <strong class="champ">Téléphone:</strong>{{$Sinistres['TelephoneT']}}
 </div>
 </div>
 <div class="row"><h3 class="tem" style="margin-top: 2%">Croquis</h3></div>
 <div class="row" >
-
-    <img style=" width: 25%;transform:rotate(90deg); margin-left:40%; margin-top:-5%;margin-bottom:-5% "
+    <img style="transform:rotate(90deg); width: 25%; padding: auto; margin-left:40%; margin-top:2px;margin-bottom:2px "
     src="{{$Sinistres['CroquisA']}}"
-    alt="">
+    alt="" >
 </div>
 {{--
 <div class="row"><h3 class="tem">Blesse</h3></div>

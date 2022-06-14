@@ -13,11 +13,8 @@ class dashbordController extends Controller
 
 
         $Sinistre1 = Http::get('http://localhost:3000/api/user/get1sinistre/'.session()->get('name').'/'.$id);
-
-       // dd($Sinistre1->json('SignatureA'));
-        //Storage::download($Sinistre1->json('SignatureA'));
-
-              return view('dashbord',['id'=>$id,'Sinistres'=>$Sinistre1->json()]);
+ //dd($Sinistre1->json());
+                   return view('dashbord',['id'=>$id,'Sinistres'=>$Sinistre1->json()]);
 
        }
 }
