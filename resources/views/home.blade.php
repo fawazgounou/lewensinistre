@@ -30,7 +30,7 @@
 
                             <h5 style="color:rgb(111, 126, 225);  ">Nombre Total </h5>
 
-                                <h5 style="color: red">{{count($usersinistre)}} </h5>
+                                <h5 style="color: red">{{ $usersinistre ? count($usersinistre) : '0'}} </h5>
 
                         <!-- END CHART PERCENT-->
                     </div>
