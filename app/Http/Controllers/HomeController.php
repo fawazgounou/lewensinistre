@@ -59,4 +59,11 @@ public function voirDash(Request $request)
   return  redirect()->route('home');
 }
 
+public function rechercher(Request $request)
+{
+    $recherche = Http::get('http://localhost:3000/api/user/recherche/'.session()->get('names').'/'.$request->recherche);
+//dd($recherche->json());
+return view('home',['usersinistre'=>$recherche->json()]);
+}
+
 }

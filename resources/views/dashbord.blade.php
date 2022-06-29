@@ -55,7 +55,7 @@
                                      <strong class="champ">Nom:</strong>{{$Sinistres['NomAS']}}<br>
                                        <strong class="champ"> Prénom:</strong>{{$Sinistres['PrenomAS']}}<br>
                                       <strong class="champ"> Adresse:</strong>{{$Sinistres['AdresseAS']}}<br>
-                                        <strong class="champ">Téléphone:</strong>{{$Sinistres['TéléphoneAS']}}<br>
+                                       <strong class="champ">Téléphone:</strong>{{$Sinistres['TéléphoneAS']}}<br>
                                        <strong class="champ"> Code Postal:</strong>{{$Sinistres['Code_PostalAS']}}<br>
                                        <strong class="champ">Email:</strong>{{$Sinistres['EmailAS']}}<br>
                                        <h5>Vehicule</h5>
@@ -81,11 +81,11 @@
                                         <strong class="champ">Date de naissance:</strong>{{$Sinistres['date_naissanceC']}}<br>
                                         <strong class="champ">Adresse:</strong>{{$Sinistres['AdresseC']}}<br>
                                         <strong class="champ">Téléphone:</strong>{{$Sinistres['telephoneC']}}<br>
-                                        <strong class="champ">Email:</strong>{{$Sinistres['emailC']}}<br>
-                                        <strong class="champ">Permis de conduire N°:</strong>{{$Sinistres['num_permisC']}}<br>
+                                        <strong class="champ">Email:</strong>{{$Sinistres['num_permisC']}}<br>
+                                        <strong class="champ">Permis de conduire N°:</strong>{{$Sinistres['fin_valide_permisC']}}<br>
                                         <strong class="champ">Pays:</strong>{{$Sinistres['paysC']}}<br>
-                                        <strong class="champ">Catégorie:</strong>{{$Sinistres['categorieC']}}<br>
-                                        <strong class="champ">Permis valide jusqu'au:</strong>{{$Sinistres['fin_valide_permisC']}}<br>
+                                        <strong class="champ">Catégorie:</strong>{{$Sinistres['emailC']}}<br>
+                                        <strong class="champ">Permis valide jusqu'au:</strong>{{$Sinistres['categorieC']}}<br>
                                         <h5>Dégats apparents au véhicule</h5>
                                         <strong class="champ">Description:</strong>{{$Sinistres['Description']}}<br>
                                         <strong class="champ">Mes Observations:</strong>{{$Sinistres['Détaille']}}<br>
@@ -164,7 +164,7 @@
     <div class="row"><h3 class="tem">Témoin</h3></div>
     <div class="row">
 <div class=" col-md-3">
-    <strong class="champ">Nom</strong>{{$Sinistres['nomT']}}
+    <strong class="champ">Nom:</strong>{{$Sinistres['nomT']}}
 </div>
 <div class=" col-md-3">
     <strong class="champ">Prénom:</strong>{{$Sinistres['prenomT']}}

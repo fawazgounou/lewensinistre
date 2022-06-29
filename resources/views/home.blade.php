@@ -10,8 +10,8 @@
 
                     <div class="row" style="background-color:rgb(111, 126, 225); ">
                         <h3 style="margin-left:300px; margin-right:5px;margin-top:3px; color:white;  text-align: center; "><strong>Rechercher une Date :</strong> </h3>
-                        <form method='post' action='....'>
-
+                        <form method='post' action='rechercher'>
+@csrf
 
                             <input  style="color:white; background-color:rgb(111, 126, 225);"type='date'  id='recherche' name='recherche'>
                            <button class="btn btn-danger"  type='submit'> Rechercher</button>

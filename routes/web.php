@@ -29,6 +29,8 @@ Auth::routes();
 
 Route::post('login/{provider}/callback', 'Auth\LoginController@handleCallback');
 
+Route::post('rechercher', [HomeController::class,'rechercher']);
+
 Route::get('home', [HomeController::class,'index'])->name('home');
 
 

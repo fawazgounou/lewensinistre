@@ -70,13 +70,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link"style="color:rgb(111, 126, 225);" href="{{ route('login') }}"><strong>{{ __('Login') }}</strong></a>
+                                    <a class="nav-link"style="color:rgb(111, 126, 225);" href="{{ route('login') }}"><strong>{{ __('Connexion') }}</strong></a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link"style="color:rgb(111, 126, 225);" href="{{ route('register') }}"><strong>{{ __('Register') }}</strong></a>
+                                    <a class="nav-link"style="color:rgb(111, 126, 225);" href="{{ route('register') }}"><strong>{{ __('Inscription') }}</strong></a>
                                 </li>
                             @endif
                         @else

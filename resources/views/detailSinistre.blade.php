@@ -120,17 +120,18 @@ aside{
                         <p > <strong>Signature A </strong>
                             &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
                             <strong>Signature B</strong> </p>
-                    <p>   @if($Sinistres['SignatureB']==" ")
-                        <h6> Pas de Signature A</h6>
+                    <p>   @if($Sinistres['SignatureA']=="")
+                         Pas de Signature A
                         @else
                       <img
                         src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureA'])) }}"
                         alt="" height="30" width="99">
                         @endif &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                         @if($Sinistres['SignatureB']==" ")
-                        <h6> Pas de SignatureB</h6>
+                         @if($Sinistres['SignatureB']=="")
+                         Pas de SignatureB
                         @else
                         <img
+
                         src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['SignatureB'])) }}"
                         alt="" height="30" width="99">
                           @endif</p>
@@ -195,11 +196,11 @@ aside{
                 <strong class="champ">Date de naissance:</strong>{{$Sinistres['date_naissanceC']}}<br>
                 <strong class="champ">Adresse:</strong>{{$Sinistres['AdresseC']}}<br>
                 <strong class="champ">Téléphone:</strong>{{$Sinistres['telephoneC']}}<br>
-                <strong class="champ">Email:</strong>{{$Sinistres['emailC']}}<br>
-                <strong class="champ">Permis de conduire N°:</strong>{{$Sinistres['num_permisC']}}<br>
-                <strong class="champ">Pays:</strong>{{$Sinistres['paysC']}}<br>
-                <strong class="champ">Catégorie:</strong>{{$Sinistres['categorieC']}}<br>
-                <strong class="champ">Permis valide jusqu'au:</strong>{{$Sinistres['fin_valide_permisC']}}<br>
+                <strong class="champ">Email:</strong>{{$Sinistres['num_permisC']}}<br>
+              <strong class="champ">Permis de conduire N°:</strong>{{$Sinistres['fin_valide_permisC']}}<br>
+               <strong class="champ">Pays:</strong>{{$Sinistres['paysC']}}<br>
+               <strong class="champ">Catégorie:</strong>{{$Sinistres['emailC']}}<br>
+              <strong class="champ">Permis valide jusqu'au:</strong>{{$Sinistres['categorieC']}}<br>
                 <h5>Dégats apparents au véhicule</h5>
                 <strong class="champ">Description:</strong>{{$Sinistres['Description']}}<br>
                 <strong class="champ">Mes Observations:</strong>{{$Sinistres['Détaille']}}<br>
@@ -309,9 +310,9 @@ aside{
     @if($Sinistres['CroquisA']==" ")
     <h6> Pas de Croquis</h6>
     @else
-    <img   style=" transform:rotate(90deg); margin-top:-1px;margin-bottom:-5px;	width:390px;
-	height:200%;
-   	margin-left:20px;
+    <img   style=" transform:rotate(90deg); margin-top:-1px;margin-bottom:-3px;	width:300px;
+	height:305px;
+   	margin-left:95px;
 	 "
     src="data:image/png;base64,{{ base64_encode(file_get_contents($Sinistres['CroquisA'])) }}"
     alt="">

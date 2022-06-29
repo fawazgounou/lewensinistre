@@ -59,7 +59,7 @@
                       </button>
 
                         <a class="btn btn-link" href="/password/reset" style="text-decoration: none;">
-                          Forgot Your Password?
+                          Mot de passe oublier?
                         </a>
                     </div>
                   </div>
