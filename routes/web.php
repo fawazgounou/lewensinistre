@@ -6,7 +6,9 @@ use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\dashbordController;
 use App\Http\Controllers\AllvehiculeController;
+use App\Http\Controllers\CompagnyController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\SinistreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,24 +23,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('connexion');
 
 Auth::routes();
-
 
 Route::post('login/{provider}/callback', 'Auth\LoginController@handleCallback');
 
 Route::post('rechercher', [HomeController::class,'rechercher']);
 
-Route::get('home', [HomeController::class,'index'])->name('home');
+Route::get('/home' , [HomeController::class , 'index'])->name('home');
 
+// Route for sinistres
+    Route::get('/sinistre/{compagny?}', [SinistreController::class,'index'])->name('sinistre.index');
+    Route::get('/sinistre/details/{campagny}/{id}', [SinistreController::class,'details'])->name('sinistre.details');
+    Route::get('/sinistre/download/{campagny}/{id}', [SinistreController::class, 'download'])->name('sinistre.download');
+
+// Route for compagny
+    Route::get('/compagnie', [CompagnyController::class,'index'])->name('compagny.index');
 
 Route::get('voirdash/{name}', [HomeController::class,'voirDash']);
-Route::get('administrateur', [AdminController::class,'Alluser']);
+Route::get('administrateur', [AdminController::class,'Alluser'])->name('administrator');
 Route::get('update/{id}/{role}', [AdminController::class,'update']);
 
-Route::get('dashbord/{id}', [dashbordController::class,'Detail']);
 
 Route::get('detailSinistre/{id}', [DetailController::class,'Details'])->name('detailSinistre');
 

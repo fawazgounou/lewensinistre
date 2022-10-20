@@ -70,7 +70,7 @@ class RegisterController extends Controller
             'name' => $request->name,               
         ]);
 
-         return redirect()->route('login');
+         return redirect()->route('connexion');
        } catch (FirebaseException $e) {
           Session::flash('error', $e->getMessage());
           return back()->withInput();

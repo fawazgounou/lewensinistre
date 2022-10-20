@@ -10,18 +10,16 @@ class AdminController extends Controller
 {
     public function Alluser(){
         $response = Http::get('http://localhost:3000/api/user/getusers');
-
-
-          //dd($response->json());
         return  view('administrateur',['user'=>$response->json()]);
-       }
-public Function update($id,$role){
+    }
+    
+    public Function update($id,$role){
 
-    $resonpses = Http::put('http://localhost:3000/api/user/updateR/'.$id, [
-        'role' => $role,
-
-    ]);
-    return redirect('administrateur')->with('message',"Role de l'identifiant modifier avec succès." );
-}
+        $resonpses = Http::put('http://localhost:3000/api/user/updateR/'.$id, 
+                            [
+                                'role' => $role,
+                            ]);
+        return redirect('administrateur')->with('message',"Role de l'identifiant modifier avec succès." );
+    }
 
 }
