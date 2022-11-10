@@ -17,13 +17,12 @@ class FirebaseAuth
      */
     public function handle(Request $request, Closure $next)
     {
-      $uid = Session::get('uid');
+      $uid = Session::get('user_id');
       if ($uid) {
         return $next($request);
-      }
-      else {
+      }else{
         Session::flush();
-        return redirect('/login');
+        return redirect()->route('connexion')->with(['error' , "Pour accéder à cette page vous devrez vous connecter."]);
       }
 
     }

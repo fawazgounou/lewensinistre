@@ -22,31 +22,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('connexion');
+// Route befor login ---------------------------------------------------
+
+Route::get('/', function () { return view('index'); })->name('connexion');
 
 Auth::routes();
 
 Route::post('login/{provider}/callback', 'Auth\LoginController@handleCallback');
 
-Route::post('rechercher', [HomeController::class,'rechercher']);
+// Route::post('rechercher', [HomeController::class,'rechercher']);
 
-Route::get('/home' , [HomeController::class , 'index'])->name('home');
+// Routes after login ---------------------------------------------------
 
-// Route for sinistres
-    Route::get('/sinistre/{compagny?}', [SinistreController::class,'index'])->name('sinistre.index');
-    Route::get('/sinistre/details/{campagny}/{id}', [SinistreController::class,'details'])->name('sinistre.details');
-    Route::get('/sinistre/download/{campagny}/{id}', [SinistreController::class, 'download'])->name('sinistre.download');
+Route::group(['middleware' => ['fireauth']] , function(){
 
-// Route for compagny
-    Route::get('/compagnie', [CompagnyController::class,'index'])->name('compagny.index');
+    // Home page after auth
+        Route::get('/home' , [HomeController::class , 'index'])->name('home');
 
-Route::get('voirdash/{name}', [HomeController::class,'voirDash']);
-Route::get('administrateur', [AdminController::class,'Alluser'])->name('administrator');
-Route::get('update/{id}/{role}', [AdminController::class,'update']);
+    // Route for sinistres
+        Route::get('/sinistre/{compagny?}', [SinistreController::class,'index'])->name('sinistre.index');
+        Route::get('/sinistre/details/{compagny}/{id}', [SinistreController::class,'details'])->name('sinistre.details');
+        Route::get('/sinistre/download/{compagny}/{id}', [SinistreController::class, 'download'])->name('sinistre.download');
+
+    // Update profile
+        Route::get('/profile/{id}', [CompagnyController::class,'profile'])->name('compagny.profile');
+        Route::post('/type/{id}', [CompagnyController::class,'update'])->name('compagny.update');
+
+    // Route for admin unique
+        Route::group(['middleware' => ['admin']], function () {
+
+            // Route for compagny
+                Route::get('/compagnie', [CompagnyController::class,'index'])->name('compagny.index');
+                Route::get('/ajouter/utilisateur' , [CompagnyController::class , 'create'])->name('compagny.create');
+                Route::post('/ajouter/utilisateur' , [CompagnyController::class , 'store'])->name('compagny.store');
+                Route::get('/type/{id}/{role}', [CompagnyController::class,'type'])->name('compagny.type');
+
+        });
+        // Route::get('voirdash/{name}', [HomeController::class,'voirDash']);
+        // Route::get('administrateur', [AdminController::class,'Alluser'])->name('administrator');
+        // Route::get('update/{id}/{role}', [AdminController::class,'update']);
 
 
-Route::get('detailSinistre/{id}', [DetailController::class,'Details'])->name('detailSinistre');
+        // Route::get('detailSinistre/{id}', [DetailController::class,'Details'])->name('detailSinistre');
+
+
+});
+
 
 

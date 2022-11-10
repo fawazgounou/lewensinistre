@@ -9,13 +9,13 @@ use PhpParser\Node\Stmt\Function_;
 class AdminController extends Controller
 {
     public function Alluser(){
-        $response = Http::get('http://localhost:3000/api/user/getusers');
+        $response = Http::get(env('APP_URL_API').'/api/user/getusers');
         return  view('administrateur',['user'=>$response->json()]);
     }
     
     public Function update($id,$role){
 
-        $resonpses = Http::put('http://localhost:3000/api/user/updateR/'.$id, 
+        $resonpses = Http::put(env('APP_URL_API').'/user/updateR/'.$id, 
                             [
                                 'role' => $role,
                             ]);

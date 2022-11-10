@@ -169,14 +169,14 @@
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-    @include('Layouts.header')
+    @include('layouts.header')
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
       
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
-      @include('Layouts.sidebar')
+      @include('layouts.sidebar')
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -185,7 +185,7 @@
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-        @include('Layouts.footer')
+        @include('layouts.footer')
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -226,19 +226,12 @@
   <script src="{!!asset('/new-style/js/dataTable/responsive.bootstrap4.min.js')!!}"></script>
   <script src="{!!asset('/new-style/js/dataTable/dataTables.rowGroup.min.js')!!}"></script>
 
-    <!-- End plugin js for select2 -->
-  <!-- inject:js -->
-  <script src="{!! asset('/new-style/js/off-canvas.js') !!}"></script>
-  <script src="{!! asset('/new-style/js/hoverable-collapse.js') !!}"></script>
-  <script src="{!! asset('/new-style/js/template.js') !!}"></script>
-  <script src="{!! asset('/new-style/js/settings.js') !!}"></script>
-  <script src="{!! asset('/new-style/js/todolist.js') !!}"></script>
-
   <script src="{!!asset('/new-style/js/functions.js')!!}"></script>
 
-  @include('Layouts.js.components')
+  @include('layouts.js.components')
 
   @yield('scripts')
+
 </body>
 
 </html>

@@ -29,9 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+      // dd(env('APP_URL_API'));
       // Get user connected for check out status
-      $user  = Http::get('http://localhost:3000/api/user/getuser/'.session()->get('names'));
 
+      $user  = Http::get(env('APP_URL_API').'/user/getuser/'.session()->get('names'));
+
+      Session::put('role',$user->json("role"));
       // if user is user redirection to sinistre page
 
       if ($user->json("role") == 'user') {
@@ -67,7 +70,7 @@ class HomeController extends Controller
 
     public function rechercher(Request $request)
     {
-        $recherche = Http::get('http://localhost:3000/api/user/recherche/'.session()->get('names').'/'.$request->recherche);
+        $recherche = Http::get(env('APP_URL_API').'/user/recherche/'.session()->get('names').'/'.$request->recherche);
     //dd($recherche->json());
     return view('home',['usersinistre'=>$recherche->json()]);
     }

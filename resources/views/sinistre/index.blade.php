@@ -8,33 +8,31 @@
                     <div class="col-md-12">
                         <!-- DATA TABLE-->
                         <h3>TABLEAU DES SINISTRES DE LA COMPAGNIE <span class="text-danger"> {{ strtoupper($compagny) }} </span></h3>
-                            <br>
+                        <br>
                         <div class="table-responsive m-b-40">
                             <table id="table" class="display expandable-table" style="width:100%">
                                 <thead>
-                                    <tr>
+                                    <tr class="text-center">
+                                        <th>N°</th>
                                         <th>Date</th>
                                         <th>Heure</th>
                                         <th>Localisation</th>
-                                        {{-- <th>Lieu</th>
-                                        <th>Blessé</th>
-                                        <th>Dégats</th> --}}
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
 
-                                        @if ($usersinistre)
-                                       
-                                            @foreach($usersinistre as $Sinistres)
-                                                <tr>
-                                                    <td>{{$Sinistres['sinistre']["dateSinistre"]}}</td>
-                                                    <td>{{$Sinistres['sinistre']['heureSinistre']}}</td>
-                                                    <td>{{$Sinistres['Localisation']}}</td>
-                                                    {{-- <td> {{$Sinistres['sinistre']['lieuSinistre']}}</td>
-                                                    <td>{{$Sinistres['sinistre']['blesse']}}</td>
-                                                    <td>{{$Sinistres['sinistre']['degats']}}</td> --}}
-                                                    <td>
-                                                        <div class="row">
+                                    @if ($usersinistre)
+                                    
+                                        @foreach($usersinistre as $key => $Sinistres)
+                                            <tr class="text-center">
+                                                <td>{{ ++$key }}</td>
+                                                <td>{{$Sinistres['sinistre']["dateSinistre"]}}</td>
+                                                <td>{{$Sinistres['sinistre']['heureSinistre']}}</td>
+                                                <td>{{$Sinistres['Localisation']}}</td>
+                                                <td >
+                                                    <div class="row text-center">
+                                                        <div class="col-12">
                                                             <a class="btn btn-danger mr-1" href="{{ route('sinistre.details' , [$compagny , $Sinistres['id']]) }}" style="color: white" >
                                                                 Détails
                                                             </a>
@@ -42,14 +40,14 @@
                                                                 Télécharger
                                                             </a>
                                                         </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endforeach
 
-                                        @endif
-                          
-
-                            </tbody>
+                                    @endif
+                        
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -69,8 +67,9 @@
             messagingSenderId: "455258819634",
             appId: "1:455258819634:web:94ab999c46b736d566002b"
          };
-            // Initialize Firebase
-     firebase.analytics;
+        
+         // Initialize Firebase
+        firebase.analytics;
         firebase.initializeApp(firebaseConfig);
         var db = firebase.firestore();
 
@@ -79,6 +78,6 @@
                    console.log(doc.id,"=>", $doc.data() ) ;
                 });
             });
-</script>
+    </script>
 
 @endsection

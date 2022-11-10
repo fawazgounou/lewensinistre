@@ -25,30 +25,28 @@
                                 <tbody>
                                     @if ($user)
                                         @foreach($user as $compagnie)
-                                            <tr class="bg-white">
-                                                <td>{{$compagnie['name']}}</td>
-                                                <td>{{$compagnie['mail']}}</td>
-                                                <td>{{$compagnie['role']}}</td>
-                                                <td>
+                                            
+                                                <tr class="bg-white">
+                                                    <td>{{$compagnie['name']}}</td>
+                                                    <td>{{$compagnie['mail']}}</td>
+                                                    <td>{{$compagnie['role']}}</td>
+                                                    <td>
 
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Modifier <span class="caret"></span>
-                                                        </button>
-                                                        <div class="dropdown-menu" >
-                                                            <a href="/update/{{$compagnie['id']}}/user">User</a>
-                                                            <a href="/update/{{$compagnie['id']}}/new">New</a>
-                                                            <a href="/update/{{$compagnie['id']}}/admin">Admin</a>
+                                                        <div class="dropdown">
+                                                            <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Modifier <span class="caret"></span>
+                                                            </button>
+                                                            <div class="dropdown-menu" >
+                                                                <a href="/update/{{$compagnie['id']}}/user">User</a>
+                                                                <a href="/update/{{$compagnie['id']}}/new">New</a>
+                                                                <a href="/update/{{$compagnie['id']}}/admin">Admin</a>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                </td>
-                                                <td>
-                                                    {{-- <button class="btn btn-primary" type="button" >  href="{{ route('sinistre.details' , ) }}"   --}}
-                                                        {{-- <a  class="btn btn-primary"  href="voirdash/{{$compagnie['name']}}" style="color: white">Voir Tableau de bord</a> --}}
+                                                    </td>
+                                                    <td>
                                                         <a  class="btn btn-primary"  href="{{ route('home' , $compagnie['name']) }}" style="color: white">Voir Tableau de bord</a>
-                                                    {{-- </button> --}}
-                                                </td>
-                                            </tr>
+                                                    </td>
+                                                </tr>
 
                                         @endforeach
                                     @endif

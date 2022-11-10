@@ -75,7 +75,7 @@
         "searching": true,
         "info":     true,
         "language" : {
-            "url" : '{!!asset('/plugins/dataTable.french.lang')!!}'
+            "url" : '{!!asset('/plugin/dataTable.french.lang')!!}'
         },
         columnDefs: [
             { responsivePriority: 1, targets: 0 },
@@ -93,48 +93,48 @@
     // Template for statistics
 
     // Bar
-    function statistics_bar(axe_X , axe_Y , label , color , border_color , barChartCanvas , border_width = 2) {
+    // function statistics_bar(axe_X , axe_Y , label , color , border_color , barChartCanvas , border_width = 2) {
 
-      var barChart = new Chart(barChartCanvas, {
-              type: 'bar',
-              data: {
-                  labels: axe_X,
-                  datasets: [{
-                  label: label,
-                  data: axe_Y,
-                  backgroundColor: [
-                      color,
-                      color,
-                      color,
-                  ],
-                  borderColor: [
-                      border_color,
-                      border_color,
-                      border_color,
-                  ],
-                  borderWidth: border_width,
-                      fill: true
-                  }]
-              },
-              options: {
-                  scales: {
-                      yAxes: [{
-                          ticks: {
-                              beginAtZero: true
-                          }
-                      }]
-                  },
-                  legend: {
-                      display: false
-                  },
-                  elements: {
-                      point: {
-                          radius: 0
-                      }
-                  }
-              }
-          });
+    //   var barChart = new Chart(barChartCanvas, {
+    //           type: 'bar',
+    //           data: {
+    //               labels: axe_X,
+    //               datasets: [{
+    //               label: label,
+    //               data: axe_Y,
+    //               backgroundColor: [
+    //                   color,
+    //                   color,
+    //                   color,
+    //               ],
+    //               borderColor: [
+    //                   border_color,
+    //                   border_color,
+    //                   border_color,
+    //               ],
+    //               borderWidth: border_width,
+    //                   fill: true
+    //               }]
+    //           },
+    //           options: {
+    //               scales: {
+    //                   yAxes: [{
+    //                       ticks: {
+    //                           beginAtZero: true
+    //                       }
+    //                   }]
+    //               },
+    //               legend: {
+    //                   display: false
+    //               },
+    //               elements: {
+    //                   point: {
+    //                       radius: 0
+    //                   }
+    //               }
+    //           }
+    //       });
 
-    }
+    // }
 
 </script>

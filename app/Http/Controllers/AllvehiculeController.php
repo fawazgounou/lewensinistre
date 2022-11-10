@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class AllvehiculeController extends Controller
 {
     public function AllVoiture(){
-        $allvehiculA = Http::get('http://localhost:3000/api/vehicule/AllvehiculeA');
+        $allvehiculA = Http::get(env('APP_URL_API').'/vehicule/AllvehiculeA');
 
         return  view('StatistiqAll',[ 'AllvehiculeA'=>$allvehiculA->json()]);
 

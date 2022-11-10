@@ -11,7 +11,7 @@ class DetailController extends Controller
     //
     public function Details($id){
         // dd('Details');
-    $Sinistre1 = Http::get('http://localhost:3000/api/user/getdetailssinistre/'.session()->get('name').'/'.$id);
+    $Sinistre1 = Http::get(env('APP_URL_API').'/user/getdetailssinistre/'.session()->get('name').'/'.$id);
            //dd($Sinistre1->json());
 
            $dompdf = new Dompdf();
