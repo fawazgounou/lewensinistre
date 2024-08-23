@@ -49,7 +49,7 @@
             border-right: 3px solid rgb(65, 178, 219);
             border-bottom: 3px solid rgb(65, 178, 219);
             padding: 0px;
-            
+
         }
         .content-veh #veh-a h4{
             background-color: rgb(65, 178, 219);
@@ -82,9 +82,9 @@
         }
 
         .img-signature{
-            width: 100%; 
-            height:200px; 
-            margin-bottom:20px; 
+            width: 100%;
+            height:200px;
+            margin-bottom:20px;
             border-radius:10px;
             border: 1px solid;
         }
@@ -117,7 +117,7 @@
         }
 
         .content-picture td{
-            height: 250px; 
+            height: 250px;
             border-radius:10px !important;
             padding: 0px;
             /* background: #f8f9fa; */
@@ -160,9 +160,10 @@
             color: red;
         }
     </style>
+    
 </head>
 <body>
-    
+
     <div>
         <h3 class="text-center border-bottom border-primary font-weight-bold">CONSTAT AMIABLE AUTOMOBILE POUR <span class="text-orange">{{strtoupper($compagny)}}</span></h3>
 
@@ -236,7 +237,7 @@
                             <h5>Signature A</h5>
                             @if (array_key_exists('SignatureA' , $Sinistres) && $Sinistres['SignatureA'] != "")
                                 <img class="img-signature" src="{{ array_key_exists('SignatureA' , $Sinistres) ? $Sinistres['SignatureA'] : ''}}" alt="">
-                            @else 
+                            @else
                                 <div class="text-danger img-signature" style="border-color:black; background-color:white;">Pas de signature</div>
                             @endif
                         </div>
@@ -313,7 +314,7 @@
                             <h5>Signature B</h5>
                             @if (array_key_exists('SignatureB' , $Sinistres) && $Sinistres['SignatureB'] != "")
                                 <img class="img-signature" src="{{ array_key_exists('SignatureB' , $Sinistres) ? $Sinistres['SignatureB'] : ''}}" alt="">
-                            @else 
+                            @else
                                 <div class="text-danger img-signature" style="border-color:black; background-color:white;">Pas de signature</div>
                             @endif
                         </div>
@@ -333,11 +334,11 @@
 
         <div class="content-witnesses">
             <h4>Témoins</h4>
-                
+
             @if (count($Sinistres['temoins']['data']) > 0)
                 <table style="width: 100%">
                     @foreach ( $Sinistres['temoins']['data'] as $key => $temoin )
-                        
+
                         <tr>
                             <td style="width: 4%;">
                                 {{ ++$key.'-' }}
@@ -355,10 +356,10 @@
                                 <strong class="champ">Téléphone : </strong>{{ array_key_exists('telephone' , $temoin) ? $temoin['telephone'] : ''}}
                             </td>
                         </tr>
-                    
+
                     @endforeach
                 </table>
-            @else 
+            @else
                 <span class="text-danger">Aucun témoins enregistré.</span>
             @endif
         </div>
@@ -369,7 +370,7 @@
             @if (count($Sinistres['blesse']['data']) > 0)
                 <table style="width: 100%; ">
                     @foreach ( $Sinistres['blesse']['data'] as $key => $blesse )
-                        
+
                         <tr>
                             <td colspan="4"><strong> => Blessé {{ ++$key }}</strong></td>
                         </tr>
@@ -385,10 +386,10 @@
                             <td style="width:25%;"><strong>Nature  : </strong> {{array_key_exists('nature' , $blesse) ? $blesse['nature'] : ''}}</td>
                             <td style="width:25%;"><strong>Soin/Hospitalisé : </strong> {{array_key_exists('centrehospital' , $blesse) ? $blesse['centrehospital'] : ''}}</td>
                         </tr>
-                    
+
                     @endforeach
                 </table>
-            @else 
+            @else
                 <span class="text-danger">Aucun blessé enregistré.</span>
             @endif
         </div>
@@ -400,7 +401,7 @@
                     <td class="w-50">
                         @if (array_key_exists('AvantA' , $Sinistres) && $Sinistres['AvantA'] != "")
                             <img class="cap" src="{{ array_key_exists('AvantA' , $Sinistres) ? $Sinistres['AvantA'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Avant</div>
@@ -408,7 +409,7 @@
                     <td class="w-50">
                         @if (array_key_exists('ArriereA' , $Sinistres) && $Sinistres['ArriereA'] != "")
                             <img class="cap" src="{{  array_key_exists('ArriereA' , $Sinistres) ? $Sinistres['ArriereA'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Arriere</div>
@@ -418,7 +419,7 @@
                     <td class="w-50">
                         @if (array_key_exists('DroitA' , $Sinistres) && $Sinistres['DroitA'] != "")
                             <img class="cap" src="{{ array_key_exists('DroitA' , $Sinistres) ? $Sinistres['DroitA'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Droit</div>
@@ -426,7 +427,7 @@
                     <td class="w-50">
                         @if (array_key_exists('GaucheA' , $Sinistres) && $Sinistres['GaucheA'] != "")
                             <img class="cap" src="{{ array_key_exists('GaucheA' , $Sinistres) ? $Sinistres['GaucheA'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Gauche</div>
@@ -436,7 +437,7 @@
                     <td class="w-50">
                         @if (array_key_exists('HautA' , $Sinistres) && $Sinistres['HautA'] != "")
                             <img class="cap" src="{{  array_key_exists('HautA' , $Sinistres) ? $Sinistres['HautA'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Haut</div>
@@ -452,7 +453,7 @@
                     <td class="w-50">
                         @if (array_key_exists('AvantB' , $Sinistres) && $Sinistres['AvantB'] != "")
                             <img class="cap" src="{{ array_key_exists('AvantB' , $Sinistres) ? $Sinistres['AvantB'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Avant</div>
@@ -460,7 +461,7 @@
                     <td class="w-50">
                         @if (array_key_exists('ArriereB' , $Sinistres) && $Sinistres['ArriereB'] != "")
                             <img class="cap" src="{{  array_key_exists('ArriereB' , $Sinistres) ? $Sinistres['ArriereB'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Arriere</div>
@@ -470,7 +471,7 @@
                     <td class="w-50">
                         @if (array_key_exists('DroitB' , $Sinistres) && $Sinistres['DroitB'] != "")
                             <img class="cap" src="{{ array_key_exists('DroitB' , $Sinistres) ? $Sinistres['DroitB'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Droit</div>
@@ -478,7 +479,7 @@
                     <td class="w-50">
                         @if (array_key_exists('GaucheB' , $Sinistres) && $Sinistres['GaucheB'] != "")
                             <img class="cap" src="{{ array_key_exists('GaucheB' , $Sinistres) ? $Sinistres['GaucheB'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Gauche</div>
@@ -488,7 +489,7 @@
                     <td class="w-50">
                         @if (array_key_exists('HautB' , $Sinistres) && $Sinistres['HautB'] != "")
                             <img class="cap" src="{{  array_key_exists('HautB' , $Sinistres) ? $Sinistres['HautB'] : ''}}" alt="">
-                        @else 
+                        @else
                             <div class="text-center text-danger cap-not-found">Pas de capture</div>
                         @endif
                         <div class="text-center cap-title">Haut</div>
@@ -503,7 +504,7 @@
                 <span class="text-danger">Pas de capture</span>
             @else
                 <table class="content-picture" style="width: 100%;">
-                
+
                     <tr>
                         <td class="w-20">
                             @if (array_key_exists('AvantA' , $Sinistres) && $Sinistres['AvantA'] != "")
@@ -516,7 +517,7 @@
                                 <img class="cap" src="{{  array_key_exists('ArriereA' , $Sinistres) ? $Sinistres['ArriereA'] : ''}}" alt="">
                                 <div class="text-center cap-title">Arriere</div>
                             @endif
-                        </td> 
+                        </td>
                         <td class="w-20">
                             @if (array_key_exists('DroitA' , $Sinistres) && $Sinistres['DroitA'] != "")
                                 <img class="cap" src="{{ array_key_exists('DroitA' , $Sinistres) ? $Sinistres['DroitA'] : ''}}" alt="">
@@ -536,7 +537,7 @@
                             @endif
                         </td>
                     </tr>
-                    
+
                 </table>
             @endif
         </div>
@@ -548,8 +549,8 @@
             @else
                 <table class="content-picture" style="width: 100%;">
                     <tr>
-    
-                        <td class="w-20">                   
+
+                        <td class="w-20">
                             @if (array_key_exists('AvantB' , $Sinistres) && $Sinistres['AvantB'] != "")
                                 <img class="cap" src="{{ array_key_exists('AvantB' , $Sinistres) ? $Sinistres['AvantB'] : ''}}" alt="">
                                 <div class="text-center cap-title">Avant</div>
