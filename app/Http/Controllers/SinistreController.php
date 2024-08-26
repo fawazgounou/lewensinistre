@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class SinistreController extends Controller
 {
     public function index($compagny=null){
+        // dd(base_path('vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64'));
         // If $compagny is'nt declared take user connected
         if ($compagny==null) {
             $compagny = Session::get('name');

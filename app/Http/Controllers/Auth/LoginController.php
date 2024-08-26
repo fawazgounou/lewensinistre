@@ -44,16 +44,15 @@ class LoginController extends Controller
        *
        * @return void
        */
-      public function __construct(FirebaseAuth $auth) {
-         $this->middleware('guest')->except('logout');
-         $this->auth = $auth;
-      }
+        public function __construct(FirebaseAuth $auth) {
+            $this->middleware('guest')->except('logout');
+            $this->auth = $auth;
+        }
 
       protected function login(Request $request) {
 
          try {
             $signInResult = $this->auth->signInWithEmailAndPassword($request['email'], $request['password']);
-
             $user = new User($signInResult->data());
             $ok = $signInResult->data(['displayName']);
             $loginuid = $signInResult->firebaseUserId();
@@ -64,6 +63,7 @@ class LoginController extends Controller
 
             return redirect($this->redirectPath());
          } catch (FirebaseException $e) {
+            dd($e->getMessage());
             throw ValidationException::withMessages([$this->username() => [trans('auth.failed')],]);
          }
       }

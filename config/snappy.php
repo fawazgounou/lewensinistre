@@ -35,17 +35,33 @@ return [
 
     'pdf' => [
         'enabled' => true,
-        'binary'  => env('WKHTML_PDF_BINARY', public_path('snappy/wkhtmltopdf-amd64')),
+        'binary'  => env('WKHTML_PDF_BINARY', '"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf"'),
         'timeout' => false,
-        'options' => [],
+        'options' => [
+           'load-error-handling' => 'ignore',
+            'disable-smart-shrinking' => true,
+            'enable-local-file-access' => true,  // Permet l'accès aux fichiers locaux
+            'no-images' => false,                // Charge les images externes
+            'disable-smart-shrinking' => true,   // Évite les réductions d'image excessives
+            'no-stop-slow-scripts' => true,
+            'javascript-delay' => 5000, // Delay for rendering dynamic content
+        ],
         'env'     => [],
     ],
 
     'image' => [
         'enabled' => true,
-        'binary'  => env('WKHTML_IMG_BINARY', public_path('snappy/wkhtmltoimage-amd64')),
+        'binary'  => env('WKHTML_IMG_BINARY', '"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage"'),
         'timeout' => false,
-        'options' => [],
+        'options' => [
+            'load-error-handling' => 'ignore',
+            'disable-smart-shrinking' => true,
+            'enable-local-file-access' => true,  // Permet l'accès aux fichiers locaux
+            'no-images' => false,                // Charge les images externes
+            'disable-smart-shrinking' => true,   // Évite les réductions d'image excessives
+            'no-stop-slow-scripts' => true,
+            'javascript-delay' => 5000, // Delay for rendering dynamic content
+        ],
         'env'     => [],
     ],
 
